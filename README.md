@@ -1,4 +1,4 @@
-# Dylan Heartbeat — AI Residency Runtime for Kelivo
+# Heartbeat Routine — AI Residency Runtime for Kelivo
 
 **一个基于 Kelivo 的 AI Agent 运行时。**  
 它不是“聊天接口转发器”，而是一个让 AI 真正**长期居住**的数字环境。
@@ -62,25 +62,34 @@ Bark 推送 → 你的手机
 
 ### 安装与配置
 
+#### 获取代码
+因为本项目需要修改时区、唤醒间隔等个性化配置，**建议先 Fork 一份到自己的账号下**，再 clone 你自己的仓库。
+
+1. 点击右上角 `Fork` 按钮，将仓库复制到你的 GitHub 账号
+2. 在终端执行：
+   ```bash
+   # 请把 YOUR_USERNAME 替换成你的 GitHub 用户名
+   git clone https://github.com/YOUR_USERNAME/dylan-heartbeat.git
+   cd dylan-heartbeat
+   ```
+
+#### 安装依赖
 ```bash
-# 克隆项目
-git clone https://github.com/callie0313/dylan-heartbeat.git
-cd dylan-heartbeat
-
-# 安装依赖
 npm install
-
-# 配置环境变量（复制模板并修改）
-cp .env.example .env
-nano .env   # 或使用文本编辑器，填入你的 Key 和地址
 ```
 
-`.env` 文件内容示例：
+#### 配置环境变量
+复制模板文件生成专属配置文件，再自定义修改参数：
+```bash
+cp .env.example .env
+nano .env   # 也可直接用文本编辑器打开 .env 文件修改
+```
 
+`.env` 完整配置示例：
 ```env
 TARGET_API_URL=https://你的API地址/v1/chat/completions
 TARGET_API_KEY=sk-你的APIKey
-MODEL_NAME=deepseek-v4-pro
+MODEL_NAME=你的模型
 BARK_KEY=你的Bark设备Key
 CUSTOM_ICON_URL=https://你的图标URL（可选）
 ADMIN_USER=admin
